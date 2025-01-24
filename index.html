@@ -96,6 +96,20 @@ src="https://www.facebook.com/tr?id=4011505765747594&ev=PageView&noscript=1"
   
     updateCountdown();
     const countdownInterval = setInterval(updateCountdown, 1000);
+
+       // Disable right-click
+        document.addEventListener("contextmenu", function (event) {
+            event.preventDefault();
+            alert("Right-click is disabled on this page.");
+        });
+
+        // Disable Ctrl+U
+        document.addEventListener("keydown", function (event) {
+            if (event.ctrlKey && event.key === "u") {
+                event.preventDefault();
+                alert("Viewing page source is disabled.");
+            }
+        });
   </script>
 </body>
 </html>
